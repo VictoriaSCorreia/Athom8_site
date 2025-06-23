@@ -1,14 +1,7 @@
-# Run and deploy your AI Studio app
+# Athom8 Landing Page
 
-This contains everything you need to run your app locally.
+Esta versão da landing page foi convertida para HTML, CSS e JavaScript puro. Não é necessário utilizar Node.js ou bibliotecas externas para executar a aplicação.
 
-## Run Locally
+## Como usar
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Basta abrir o arquivo `index.html` em um navegador moderno. O JavaScript presente em `main.js` lida apenas com o envio do formulário de contato (simulado) e atualiza o ano exibido no rodapé.
