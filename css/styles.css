@@ -2,16 +2,16 @@
   font-family: "WixMade";
   src: url("../static/fonts/WixMadeforDisplay-Regular.ttf");
 }
+
+@font-face {
+  font-family: "WixMade Bold";
+  src: url("../static/fonts/WixMadeforDisplay-Bold.ttf");
+}
+
 /* ====== CSS criado manualmente para substituir o Tailwind ====== */
 
 /* ----- Reset e Variáveis ----- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 
 :root {
   --indigo-950:#0D1230;
@@ -26,7 +26,9 @@
   --gray-300:#cbd5e1;
   --gray-400:#94a3b8;
 }
-
+html, body{
+  overflow-x: hidden;
+}
 /* ----- Elementos base ----- */
 body {
   font-family: 'WixMade';
@@ -64,7 +66,6 @@ a:hover { color: var(--sky-500); }
   top: 0;
   z-index: 50;
   padding: 1.5rem 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,.4);
 }
 
 .logo{
@@ -153,21 +154,45 @@ a:hover { color: var(--sky-500); }
 @media (min-width:1024px) { .video-content h2 { font-size: 3rem; } } */
 
 /* ----- Generic Sections ----- */
-.section-dark { background: var(--slate-910); color: var(--gray-100); padding: 4rem 0; }
-.section-light { background: var(--slate-50); color: var(--indigo-900); padding: 4rem 0; }
+.section-dark { background: var(--slate-910); color: var(--gray-100); padding-bottom: 5rem; padding-top: 5rem }
+.section-light { background: var(--slate-50); color: var(--indigo-950); padding-bottom: 5rem; padding-top: 5rem}
 
-.section-title {
+.section-title1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
+  margin-top: 0;
+  letter-spacing: 2px;
+  color:white;
+}
+.section-title2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 0;
+  letter-spacing: 2px;
+  color:#00256b;
+}
+.section-title3 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 0;
+  letter-spacing: 2px;
+  color:#ffffff;
 }
 
 .section-subtitle {
   text-align: center;
   margin: 0 auto 3rem;
+  margin-bottom: 0;
+  font-size: 1.3rem;
   max-width: 780px;
-  color: var(--gray-300);
+  color: rgb(224, 235, 243);
+  letter-spacing: 2px;
 }
 
 /* Two‑column layout */
@@ -186,21 +211,32 @@ a:hover { color: var(--sky-500); }
 }
 
 /* Text and images */
-.text-block p { margin-bottom: 2rem; font-size: 1.125rem; }
+.text-block p { margin-bottom: 1.5rem; font-size: 1.3rem; letter-spacing: 2px;}
 .culture-item {
-  font-size: 1.5rem;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 2rem;
   border-top: 2px solid var(--sky-500);
   padding-top: 1.5rem;
+  width: max-content;
 }
-.culture-item:first-child { border-top: none; padding-top: 0; }
+.culture-item:last-child { border-bottom: 2px solid #006ea5; padding-bottom: 1.5rem;}
+.culture-item:first-child { border-top: 2px solid #006ea5}
+
+.text-block h2{
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-family: "WixMade Bold";
+  padding-bottom: 40px;
+  padding-top: 10px;
+  color: #00256b;
+}
 
 .image-block img.tall, .image-block.tall img {
-  height: 100%;
+  height: 500px;
+  width: 400px;
   object-fit: cover;
-  
+  border-radius: 50px;
+  margin-left: 70px;
 }
 
 .image1{
@@ -208,7 +244,7 @@ a:hover { color: var(--sky-500); }
 }
 
 /* ----- Card Grid (Metodologia) ----- */
-.card-grid {
+/* .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
   gap: 2rem;
@@ -226,33 +262,37 @@ a:hover { color: var(--sky-500); }
 
 .card:hover { transform: scale(1.05); }
 
-.card h3 { font-size: 1.5rem; margin-bottom: 1rem; font-weight: 700; }
+.card h3 { font-size: 1.5rem; margin-bottom: 1rem; font-weight: 700; } */
 
 /* ----- Solutions Grid ----- */
-.solution-grid {
+.solution-grid{
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+  grid-template-columns: repeat(4, 1fr);   /* ⬅️ 3 colunas exatas   */
   gap: 1.5rem;
+  justify-items: center;    
+  padding-top: 30px;               /* centraliza cada card  */
 }
 
-.solution {
+/* card --------------------------------------------------------------*/
+.solution{
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 20px;
+  width: 250px;
+  padding: 1rem 2rem 1rem 2rem;
   text-align: center;
-  aspect-ratio: 1 / 1;
-  padding: 1rem;
-  border-radius: 1rem;
-  font-weight: 600;
-  background: var(--indigo-900);
-  color: var(--gray-100);
-  box-shadow: 0 6px 18px rgba(0,0,0,.25);
-  transition: transform .3s;
+  justify-content: center;
+  height: 300px;
+  border-radius: 2rem;
+  font-weight: 200;
+  font-size: 21px;
+  background: #101d44;
+  color: #fff;
+  transition: all .2s ease;
 }
 
-.solution.alt { background: #fff; color: var(--indigo-900); }
-
-.solution:hover { transform: scale(1.05); }
+.solution.alt { background: #1e2f61;}
 
 /* ----- Clients ----- */
 .clients-grid {
@@ -273,18 +313,80 @@ a:hover { color: var(--sky-500); }
 
 .client .small { display: block; font-size: .875rem; color: var(--gray-400); }
 
-.client.prezunic { color: #4ade80; }
-.client.sidi { color: #2dd4bf; }
-.client.leiaute { color: #fbbf24; }
-.client.foreiner { color: #f87171; }
+.clients-img{
+  width: 220px;
+}
+.clients-img:first-child{
+  width: 160px;
+}
+
 
 /* ----- Contact Section ----- */
 .contact-form {
-  background: var(--indigo-900);
+  background: rgb(0, 0, 32);
   color: #fff;
   padding: 2rem;
   border-radius: .75rem;
   box-shadow: 0 6px 20px rgba(0,0,0,.4);
+}
+
+.section-dark.contact-section{
+  overflow: hidden;
+  background: transparent;
+  perspective: 1000px;  
+}
+
+/* CONTÊINER de fundo com 100 % de largura ---------------------------*/
+.wave2-section{
+  position: relative;
+  width: 100%;
+  height: 90vh;       /* ajuste de acordo com o design     */
+  overflow: hidden;          /* corta o excesso das ondas         */
+  display: flex;             /* exemplo: centraliza o conteúdo    */
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;        /* margem interna opcional           */
+  isolation: isolate;        /* garante que z-index funcione bem  */
+}
+
+/* conteúdo “na frente” */
+.section2-inner{
+  position: relative;
+  z-index: 2;                /* sobrepõe as ondas                 */       /* exemplo                            */
+  text-align: center;
+  color: #fff;               /* contraste com a onda escura       */
+    display: flex;
+  flex-direction: row;
+  width: 40%;
+  height: 800px;
+}
+
+/* ONDAS rotativas ---------------------------------------------------*/
+.wave2{
+  position: absolute;
+  /* deixe a onda MUITO maior que a viewport para não aparecer borda */
+  width: 150%;               /* 2× a largura da section           */
+  height: 150%;
+  border-radius: 40%;
+  opacity: .6;
+  background: linear-gradient(
+      744deg,
+      #0285c79c,
+      #0D1230 60%,
+      #00dbebaf
+  );
+  animation: wave 55s infinite linear;
+  pointer-events: none;      /* clique passa pelo fundo           */
+  z-index: 1;                /* atrás do conteúdo                 */
+}
+
+/* velocidades diferentes p/ profundidade */
+.wave2:nth-child(2){ animation-duration: 90s; }
+.wave2:nth-child(3){ animation-duration: 80s; }
+
+/* movimento */
+@keyframes wave2{
+  to{ transform: rotate(360deg); }
 }
 
 .contact-form h2 { font-size: 1.75rem; margin-bottom: 1.5rem; }
@@ -358,3 +460,149 @@ a:hover { color: var(--sky-500); }
   font-size: .875rem;
   margin-top: 3rem;
 }
+
+
+/* CARDS */
+
+.cards{
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  height: max-content;
+}
+.e-card{
+  margin: 100px auto 0;
+  width: 240px;
+  height: 330px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 8px 28px -9px rgba(0,0,0,.45);
+  perspective: 1000px;          /* profundidade 3-D            */
+}
+
+/* CARD interno: gira */
+.e-card-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* mantém as faces no mesmo 3-D */
+  transition: transform .8s ease;
+}
+
+/* gira o wrapper ao passar o mouse */
+.e-card:hover .e-card-inner{
+  transform: rotateY(180deg);
+  cursor: pointer;
+  
+}
+
+/* esconde o “lado de trás” de cada face */
+.e-card-inner > *{
+  backface-visibility: hidden;
+}
+
+/* ------------------------------------------------------------------ */
+/* A partir daqui é o que você já tinha – apenas movido/ajustado      */
+
+.back{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background: #0285c71e;
+  color: #fff;
+  border-radius: 16px;
+  transform: rotateY(180deg);   /* verso começa “de costas”     */
+}
+
+.back p{
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.wave {
+  position: absolute;
+  width: 540px;
+  height: 700px;
+  opacity: 0.6;
+  left: 0;
+  top: 0;
+  margin-left: -50%;
+  margin-top: -70%;
+  background: linear-gradient(744deg,#0285c79c,#0D1230 60%,#00dbebaf);
+}
+
+.infotop {
+  padding-top: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 16px;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  gap: 20px;
+  text-transform: uppercase;
+  padding-left: 20px;
+  padding-right: 20px;
+  letter-spacing: 2px;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 100;
+  position: relative;
+  top: 1em;
+  text-transform: lowercase;
+}
+
+.wave:nth-child(2),
+.wave:nth-child(3) {
+  top: 210px;
+}
+
+.playing .wave {
+  border-radius: 40%;
+  animation: wave 6000ms infinite linear;
+}
+
+.wave {
+  border-radius: 40%;
+  animation: wave 55s infinite linear;
+}
+
+.playing .wave:nth-child(2) {
+  animation-duration: 40000ms;
+}
+
+.wave:nth-child(2) {
+  animation-duration: 90s;
+}
+
+.playing .wave:nth-child(3) {
+  animation-duration: 5000ms;
+}
+
+.wave:nth-child(3) {
+  animation-duration: 80s;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* CARDS 2 */
+
