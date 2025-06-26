@@ -154,7 +154,7 @@ a:hover { color: var(--sky-500); }
 @media (min-width:1024px) { .video-content h2 { font-size: 3rem; } } */
 
 /* ----- Generic Sections ----- */
-.section-dark { background: var(--slate-910); color: var(--gray-100); padding-bottom: 5rem; padding-top: 5rem }
+.section-dark { background: var(--slate-910); color: var(--gray-100); padding-bottom: 9rem; padding-top: 9rem }
 .section-light { background: var(--slate-50); color: var(--indigo-950); padding-bottom: 5rem; padding-top: 5rem}
 
 .section-title1 {
@@ -325,9 +325,11 @@ a:hover { color: var(--sky-500); }
 .contact-form {
   background: rgb(0, 0, 32);
   color: #fff;
-  padding: 2rem;
+  padding: 3rem;
   border-radius: .75rem;
   box-shadow: 0 6px 20px rgba(0,0,0,.4);
+  height: max-content;
+  width: 50%;
 }
 
 .section-dark.contact-section{
@@ -340,7 +342,7 @@ a:hover { color: var(--sky-500); }
 .wave2-section{
   position: relative;
   width: 100%;
-  height: 90vh;       /* ajuste de acordo com o design     */
+  min-height: 90vh;      /* ajuste de acordo com o design     */
   overflow: hidden;          /* corta o excesso das ondas         */
   display: flex;             /* exemplo: centraliza o conteúdo    */
   align-items: center;
@@ -354,11 +356,14 @@ a:hover { color: var(--sky-500); }
   position: relative;
   z-index: 2;                /* sobrepõe as ondas                 */       /* exemplo                            */
   text-align: center;
+
   color: #fff;               /* contraste com a onda escura       */
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: row;
   width: 40%;
-  height: 800px;
+  height: auto;
 }
 
 /* ONDAS rotativas ---------------------------------------------------*/
@@ -391,7 +396,7 @@ a:hover { color: var(--sky-500); }
 
 .contact-form h2 { font-size: 1.75rem; margin-bottom: 1.5rem; }
 
-.contact-form p { margin-bottom: 2rem; color: var(--gray-300); }
+.contact-form p { margin-bottom: 2rem; color: var(--gray-300); font-size: 1.15rem;}
 
 .contact-form form {
   display: flex;
@@ -402,28 +407,37 @@ a:hover { color: var(--sky-500); }
 .contact-form label {
   display: flex;
   flex-direction: column;
-  font-size: .875rem;
+  font-size: 1.15rem;
   gap: .5rem;
+  align-items:start ;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: .75rem 1rem;
-  border: 1px solid var(--indigo-900);
+  padding: 1rem 1rem;
+  width: 92%;
+  border: 2px solid var(--indigo-900);
   border-radius: .5rem;
   background: var(--indigo-950);
   color: var(--gray-100);
+  font-size: 1rem;
+  font-family: "WixMade";
+  resize: none;
 }
 
 .contact-form button {
-  padding: .75rem 1rem;
-  background: var(--sky-600);
+  padding: 1rem 1rem;
+  background: var(--indigo-900);
   border: none;
-  border-radius: .5rem;
+  border-radius: 2rem;
   color: #fff;
   font-weight: 600;
   cursor: pointer;
   transition: background .3s;
+  font-family: "WixMade";
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: 0.8rem;
 }
 
 .contact-form button:hover { background: var(--sky-500); }
