@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 VIDEOS_NOVOS/
+
+images/
