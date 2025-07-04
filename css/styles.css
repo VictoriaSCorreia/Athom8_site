@@ -272,6 +272,107 @@ a:hover { color: var(--sky-500); }
 }
 
 
+/* first section */
+
+.page1 {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.decorations1 {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.decorations1 .shape {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(-140%, -50%);
+}
+
+.outer-circle1 {
+  border: 1px solid #e5e7eb;
+  width: 140vmax;
+  height: 140vmax;
+  left: 140%;
+}
+
+.middle-circle1 {
+  background: rgba(148, 163, 184, 0.2);
+  width: 110vmax;
+  height: 110vmax;
+  left: 80%;
+}
+
+.inner-circle1 {
+  background: #f6f8f8;
+  width: 100vmax;
+  height: 100vmax;
+  left: 75%;
+}
+
+.content1 {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  height: 100vh;
+  font-family: var(--font-serif);
+}
+
+.left1,
+.right1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left1 {
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.right1 {
+  display: none;
+}
+
+.right-video-container1{
+  z-index: 10;
+}
+
+#video1{
+  width: 89%;
+  border-radius: 3rem;
+}
+
+.header1 p {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.header1 h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #1e293b;
+  margin: 1.5rem 0;
+  font-weight: 500;
+}
+
+.content1 article {
+  font-family: var(--font-sans);
+  color: #475569;
+  font-size: 1.125rem;
+  max-width: 32rem;
+}
+
+
 a { text-decoration: none; color:#60d7e7;}
 /* ====== COMPONENT ====== */
 .promo-box {
@@ -1111,7 +1212,7 @@ a { text-decoration: none; color:#60d7e7;}
   font-weight: 500;
 }
 
-article {
+.content article {
   font-family: var(--font-sans);
   color: #475569;
   font-size: 1.125rem;
@@ -1189,4 +1290,168 @@ cite span:last-child {
   .right {
     padding-right: 5rem;
   }
+}
+
+
+/* TECNOLOGY CAROUSEL */
+
+.container-tecnnology {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+/*   min-height: 100vh; */
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  font-weight: 300;
+  color: #4b5563;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+}
+
+.carousel2-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 67rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel2-button {
+  position: absolute;
+  top: 50%;
+  background: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.carousel2-button.prev {
+  left: 0;
+  transform: translate(-100%, -50%);
+}
+
+.carousel2-button.next {
+  right: 0;
+  transform: translate(100%, -50%);
+}
+
+.carousel2-button:hover {
+  background: #f5f5f5;
+}
+
+.carousel2-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.carousel2 {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel2-track {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+}
+
+.page2 {
+  flex-shrink: 0;
+  width: 100%;
+  display: grid;
+}
+
+.carousel2-item-container {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel2-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(248, 250, 252, 0.7);
+  border-radius: 1rem;
+  width: 160px;
+  height: 200px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: 0.1s ease;
+
+}
+
+.carousel2-item:hover {
+  background: rgba(0, 112, 177, 0.123);
+  cursor: pointer;
+}
+.carousel2-item:hover .carousel2-icon-container {
+  border: 2px solid rgba(217, 241, 255, 0.61);
+  box-shadow: 0px 0px 4px 4px rgba(217, 241, 255, 0.61) ;
+}
+
+.carousel2-icon-container {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    transition: 0.1s ease;
+}
+
+.carousel2-icon-container img {
+  width: 70px;
+  height: 70px;
+}
+
+.carousel2-item p {
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #1f2937;
+  letter-spacing: 0.1em;
+}
+
+.dots {
+  position: absolute;
+  bottom: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d1d5db;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #1f2937;
+}
+
+.dot:not(.active):hover {
+  background: #9ca3af;
 }
